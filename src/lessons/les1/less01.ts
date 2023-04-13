@@ -1,8 +1,8 @@
-// let sentenсe = 'big and long sentence'
+let sentenсe = 'big and long sentence'
 
-// const splitSentence =(sentence: string)=>{
-//     return ['big', 'and', 'long', 'sentence']
-// }
+export const splitSentence =(sentence: string)=>{
+    return sentence.toLowerCase().split(' ');
+}
 
 export const sumMult=(a: number, b: number)=>{
     return a * b;
