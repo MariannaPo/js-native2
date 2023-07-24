@@ -1,5 +1,7 @@
 import { CityType } from "../les1/04city";
-import {getStreetsTitleGovermentsBuilding} from './05_03city'
+import {getStreetsTitleGovermentsBuilding} from './05_03city';
+import { getStreetsTitleHouses} from './05_03city';
+import {welcomeMessage} from './05_03city'
 
 
 let city: CityType;
@@ -53,4 +55,22 @@ test('list of streets titles of goverments buildings', ()=>{
     expect(streets.length).toBe(2);
     expect(streets[0]).toBe('Central Str');
     expect(streets[1]).toBe('South Str');
+})
+
+test('list of streets titles of houses', ()=>{
+    let streetsHouses = getStreetsTitleHouses(city.houses)
+    
+    expect(streetsHouses.length).toBe(3);
+    expect(streetsHouses[0]).toBe('White street');
+    expect(streetsHouses[1]).toBe('Happy street');
+    expect(streetsHouses[2]).toBe('Happy street');
+})
+
+test('Welcome message', () => {
+    let message =  welcomeMessage(city.houses)
+
+    expect(message.length).toBe(3);
+    expect(message[0]).toBe('Invite residents to vote White street');
+    expect(message[1]).toBe('Invite residents to vote Happy street');
+    expect(message[2]).toBe('Invite residents to vote Happy street');
 })
