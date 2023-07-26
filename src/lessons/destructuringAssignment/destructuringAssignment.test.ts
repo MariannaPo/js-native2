@@ -41,9 +41,12 @@ expect(title).toBe('Izumrydnaya')
 })
 
 test('', ()=>{
-    const l1 = man.lessons[0];
-    const l2 = man.lessons[1];
+    const lsq = man.lessons[0];
+    const ler = man.lessons[1];
 
-    expect(l1.title).toBe('1');
-    expect(l2.title).toBe('2');
+    const[, ...ko] = man.lessons
+
+    // expect(l1.title).toBe('1');
+    // expect(l2.title).toBe('2');
+    expect(ko[0]).toStrictEqual({title: '2'});
 })
